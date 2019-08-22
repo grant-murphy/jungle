@@ -34,7 +34,9 @@
 
   <div class="row">
     <div class="col-xs-12">
+    <% if (cart_subtotal_cents >= 1) %>
       <%= form_tag orders_path do %>
+        
         <script
           src="https://checkout.stripe.com/checkout.js" class="stripe-button"
           data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
@@ -45,6 +47,12 @@
           data-email="kvirani@gmail.com"
           data-currency="cad">
         </script>
+        <% end %>
+
+      <% elsif (cart_subtotal_cents == 0)%>
+        <div class="alert alert-danger" role="alert">
+        <strong>Empty cart,</strong> <a href="/" class="alert-link">start browsing here!</a>
+</div>
       <% end %>
     </div>
   </div>
