@@ -1,4 +1,4 @@
-class Admin::DashboardController < ApplicationController
+class AboutController < ApplicationController
   http_basic_authenticate_with :name =>  ENV["HTTP_BASIC_USER"], 
   :password => ENV["HTTP_BASIC_PASSWORD"], except: [:index]
 
@@ -7,4 +7,3 @@ class Admin::DashboardController < ApplicationController
     @category_count=Category.all
   end
 end 
- 
