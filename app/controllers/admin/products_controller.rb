@@ -4,7 +4,7 @@ class Admin::ProductsController < ApplicationController
 
   def index
     @products = Product.order(id: :desc).all
-  end
+  end 
 
   def new
     @product = Product.new
