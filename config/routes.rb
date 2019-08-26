@@ -17,16 +17,11 @@ Rails.application.routes.draw do
     resources :products, except: [:edit, :update, :show]
     resources :categories, only: [:index, :new, :create]
   end 
-
-  root to: 'gif#cool'
-
-  get '/about' => 'about#show'
-  get '/cool' => 'gif#cool'
-  get '/sweet' => 'gif#sweet'
-  get '/signup' => 'users#new'
-  post '/users' => 'users#create'
-
-end
+  
+  
+    get '/signup' => 'users#new'
+    post '/users' => 'users#create'
+    get '/about' => 'about#show'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
