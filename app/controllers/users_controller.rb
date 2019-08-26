@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-
+  
   def new
   end
   
@@ -11,9 +11,12 @@ class UsersController < ApplicationController
     else
       redirect_to '/signup'
     end
+  end
 
-    private
+  private
 
-    def user_params
-      params.require(:user).permit(:name, :email, :password, :password_confirmation)
-    end
+  def user_params
+    params.require(:user).permit(:name, :email, :password, :password_confirmation)
+  end
+
+end
