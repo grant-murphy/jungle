@@ -11,7 +11,7 @@ RSpec.describe User, :type => :model do
         password_confirmation: 'grantm')
     end
       
-      it 'will be valid' do
+      it 'will be valid if all sections are filled out' do
         @user.save
         expect(@user).to be_valid
       end
@@ -33,5 +33,26 @@ RSpec.describe User, :type => :model do
         @user.save
         expect(@user).to_not be_valid
         end
-    end
+
+      it 'will not be valid if password_confirmation does not exist' do
+        @user.password_confirmation = nil
+        @user.save
+        expect(@user).to_not be_valid
+        end
+
+      it 'will not be valid if password and password_confirmation do not match' do
+        @user.password_confirmation = "grantmm"
+        @user.save
+        expect(@user).to_not be_valid
+        end
+
+      it 'will not be valid if password is shorter than 6 characters' do
+        @user.password = "grant"
+        @user.password_confirmation = "grant"
+        @user.save
+        expect(@user).to_not be_valid
+        end
+
+
+      end
 end 
