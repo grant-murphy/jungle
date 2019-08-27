@@ -52,7 +52,30 @@ RSpec.describe User, :type => :model do
         @user.save
         expect(@user).to_not be_valid
         end
-
-
       end
+
+      describe '.authenticate_with_credentials' do
+        before(:each) do
+          @user = User.new(
+          name: 'Grant', 
+          email: 'test@test.com', 
+          password: 'grantm', 
+          password_confirmation: 'grantm')
+        end
+
+        it 'will be valid if email and password are equal' do
+          @user.save
+          expect(User.authenticate_with_credentials(@user.email, @user.password)).not_to be nil
+        end
+
+        it 'will be valid when email has white-space' do
+          @user.save
+          expect(User.authenticate_with_credentials(' test@test.com ', 'grantm')).not_to be nil
+        end
+
+        it 'will be valid when email has upper and lower case letters combined' do
+          @user.save
+          expect(User.authenticate_with_credentials(' TeSt@test.com ', 'grantm')).not_to be nil
+        end
+  end
 end 
