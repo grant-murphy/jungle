@@ -1,19 +1,15 @@
 require 'rails_helper'
 
-RSpec.describe Product, :type => :model do
+RSpec.describe User, :type => :model do
   describe 'Validations' do
     before(:each) do
-      @user = Category.new(id: 1, name: 'Apparel')
-      @product = Product.new(name: 'Shirt', quantity: 1, price: 19.99, category: @category)
+      @user = User.new(first_name: 'Grant', last_name: 'Murphy', email: 'test@test.com', password: 'grant', password_confirmation: 'grant')
     end
 
-      
-      it 'will not be valid if quantity is not present' do
-      @product.quantity = nil
-      @product.save
-      expect(@product).to_not be_valid
+      it 'will not be valid if email does not exist' do
+      @user.email = nil
+      @user.save
+      expect(@user).to_not be_valid
       end
-      
-
-  end
+    end
 end
