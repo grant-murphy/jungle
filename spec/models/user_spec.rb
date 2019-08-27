@@ -7,8 +7,8 @@ RSpec.describe User, :type => :model do
       @user = User.new(
         name: 'Grant', 
         email: 'test@test.com', 
-        password: 'grantr', 
-        password_confirmation: 'grantr')
+        password: 'grantm', 
+        password_confirmation: 'grantm')
     end
       
       it 'will be valid' do
@@ -17,9 +17,21 @@ RSpec.describe User, :type => :model do
       end
       
       it 'will not be valid if email does not exist' do
-      @user.email= nil
+      @user.email = nil
       @user.save
       expect(@user).to_not be_valid
       end
+
+      it 'will not be valid if name does not exist' do
+        @user.name = nil
+        @user.save
+        expect(@user).to_not be_valid
+        end
+
+      it 'will not be valid if password does not exist' do
+        @user.password = nil
+        @user.save
+        expect(@user).to_not be_valid
+        end
     end
 end 
