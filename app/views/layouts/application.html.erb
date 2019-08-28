@@ -9,15 +9,15 @@
 <body>
 
   <%= render 'layouts/top_nav' %>
-
   <main class="container">
-    <% if current_user %>
-  Signed in as <%= current_user.name %> | <%= link_to "Logout", '/logout' %>
+  <% if current_user %>
+  Signed in as <%= current_user.name %> | <button class="userButton"><%= link_to "Logout", '/logout' %></button>
 <% else %>
-  <%= link_to 'Login', '/login' %> | <%= link_to 'Signup', '/signup' %>
+<button class="userButton"><%= link_to 'Login', '/login' %></button> | <button class="userButton"><%= link_to 'Signup', '/signup' %></button>
 <% end %>
-
-<%= yield %>
+</main>
+  <main class="container">
+  <%= yield %>
   </main>
 
   <%= yield :end_of_body %>

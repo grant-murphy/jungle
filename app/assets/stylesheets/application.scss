@@ -15,3 +15,17 @@ body {
 form.button_to {
   display: inline;
 }
+
+.userButton {
+    font-family: inherit;
+    font-size: inherit;
+    line-height: inherit;
+    border-radius: 20px;
+    background-color: #337ab7;
+    font: #fff;
+    // margin-left: 10px;
+}
+
+.userButton a {
+  color: white;
+}
