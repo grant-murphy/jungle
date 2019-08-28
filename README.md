@@ -18,10 +18,6 @@ A mini e-commerce application built with Rails 4.2 for purposes of teaching Rail
 !["MyCart Page"](https://github.com/grant-murphy/jungle/blob/master/docs/mycart-page.png)
 
 
-
-
-
-
 ## Setup
 
 1. Run `bundle install` to install dependencies
