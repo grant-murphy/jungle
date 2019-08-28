@@ -4,8 +4,23 @@ A mini e-commerce application built with Rails 4.2 for purposes of teaching Rail
 
 ## Final Product
 
-!["screenshot description"](#)
-!["screenshot description"](#)
+### Full Overview of Jungle
+!["Main Page"](https://github.com/grant-murphy/jungle/blob/master/docs/main-page.png)
+### Login Page
+!["Login Page"](https://github.com/grant-murphy/jungle/blob/master/docs/login-page.png)
+### Signup Page
+!["Signup Page"](https://github.com/grant-murphy/jungle/blob/master/docs/signup-page.png)
+### Admin Product Page
+!["Admin Products"](https://github.com/grant-murphy/jungle/blob/master/docs/admin-products.png)
+### Admin Dashboard Page
+!["Admin Products"](https://github.com/grant-murphy/jungle/blob/master/docs/admin-dashboard.png)
+### My Cart Page
+!["MyCart Page"](https://github.com/grant-murphy/jungle/blob/master/docs/mycart-page.png)
+
+
+
+
+
 
 ## Setup
 
